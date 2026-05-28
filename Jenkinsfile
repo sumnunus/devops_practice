@@ -34,6 +34,16 @@ pipeline {
 
         success {
             echo "Build and test succeeded!"
+            sh '''
+                echo "Build Result: SUCCESS" > build-result.txt
+                echo "Job: ${JOB_NAME}" >> build-result.txt
+                echo "Build Number: ${BUILD_NUMBER}" >> build-result.txt
+                echo "Time: $(date)" >> build-result.txt
+            '''
+            archiveArtifacts artifacts: 'build-result.txt'
+            mail to: 'lavesujin@gmail.com',
+                 subject: "[Jenkins] ${JOB_NAME} #${BUILD_NUMBER} - SUCCESS",
+                 body: "Build succeeded!\n\nJob: ${JOB_NAME}\nBuild: #${BUILD_NUMBER}\nURL: ${BUILD_URL}"
         }
     }
 }
