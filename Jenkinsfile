@@ -41,7 +41,7 @@ pipeline {
                 echo "Time: $(date)" >> build-result.txt
             '''
             archiveArtifacts artifacts: 'build-result.txt'
-            mail to: 'lavesujin@gmail.com',
+            mail to: 'lavesujin@gmail.com, klslml123@naver.com',
                  subject: "[Jenkins] ${JOB_NAME} #${BUILD_NUMBER} - SUCCESS",
                  body: "Build succeeded!\n\nJob: ${JOB_NAME}\nBuild: #${BUILD_NUMBER}\nURL: ${BUILD_URL}"
         }
