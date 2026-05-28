@@ -10,13 +10,13 @@ pipeline {
 
         stage('Build') {
             steps {
-                sh 'mvn -B clean compile'
+                sh './mvnw -B clean compile'
             }
         }
 
         stage('Test') {
             steps {
-                sh 'mvn -B test'
+                sh './mvnw -B test'
             }
         }
     }
