@@ -5,6 +5,7 @@ public class Main {
         System.out.println("DevOps Practice Java Project");
         runFeature("devopspractice.MemberSummaryFeature");
         runFeature("devopspractice.ScoreAverageFeature");
+        runFeature("devopspractice.BuildStatusFeature");
     }
 
     private static void runFeature(String className) {
