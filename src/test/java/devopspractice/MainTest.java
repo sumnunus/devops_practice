@@ -10,4 +10,9 @@ public class MainTest {
     void testMainRuns() {
         assertTrue(true);
     }
+
+    @Test
+    void testCiPipelineTrigger() {
+        assertTrue(true);
+    }
 }
